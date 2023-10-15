@@ -1,4 +1,12 @@
 
+mkdir RNAseq_analyzer
+cd RNAseq_analyzer
+
+
+# 引っかかった時の実装をしていないのでエラー処理については、実行していない(そのうち）
+
+
+# dataフォルダにリファレンス配列と解析対象のfastqファイルを格納する
 mkdir data
 cd data
 
@@ -19,20 +27,17 @@ Sequence/WholeGenomeFasta/genome.fa genome.fa
 
 grep "^>" genome.fa # 確認用
 
-# ファイルの実行ディレクトリについてはきちんと整理を行う
-
 
 # データの階層構造の作成
-cd ~/RNAseq_analyzer/
+cd ~/RNAseq_analyzer
+# 解析用のライブラリの入力
 mkdir tools
-mkdir analysis_rnaseq
-cd data
-mkdir fastq
+mkdir analysis_transcriptome
 
 
 # そのほかのツールのインストール
-cd ../tools
 mkdir bin
+# pathを通しておく
 export PATH=~/RNAseq_analyzer/tools/bin:$PATH
 
 
@@ -55,13 +60,13 @@ wget https://sourceforge.net/projects/samtools/files/samtools/1.18/samtools-1.18
 tar -jxvf samtools-1.18.tar.bz2
 cd samtools-1.18/
 ./configure --prefix=/home/yukato/RNAseq_analyzer/tools  
-make
-# make clean
+sudo make
+# sudo make clean # ファイルが通らない場合には、以下を実行する
 sudo make install
 ./samtools
 make cd ..
 
-
+# 
 wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.4.2/bowtie2-2.4.2-sra-linux-x86_64.zip
 unzip bowtie2-2.4.2-sra-linux-x86_64.zip
 ln -s ~/RNAseq_analyzer/tools/bowtie2-2.4.2-sra-linux-x86_64/bowtie2* bin
