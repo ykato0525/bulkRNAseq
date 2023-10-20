@@ -23,4 +23,6 @@ samtools view -bh -q 255 ./STAR_MCF710Gy96h/STAR_MCF710Gy96hAligned.sortedByCoor
 samtools index STAR_MCF710Gy96h.uniq.rmdup.bam
 
 
-featureCounts -p -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MCF7_illumina_counts.txt STAR_MCF710Gy96h.uniq.rmdup.bam
+featureCounts -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MCF7_illumina_counts.txt STAR_MCF710Gy96h.uniq.rmdup.bam
+featureCounts -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MDAMB468_NT_illumina_counts.t
+xt STAR_MDAMB468_NT.uniq.rmdup.bam
