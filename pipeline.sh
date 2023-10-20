@@ -15,14 +15,14 @@ bowtie2 -p 4 --un-conc MCF710Gy96h_noribo.fq -x ~/RNAseq_analyzer/data/Homo_sapi
 mkdir STAR_MCF710Gy96h
 cd STAR_MCF710Gy96h
 
-STAR --genomeDir ~/RNAseq_analyzer/data/hg38_noalt/STAR_index/ --readFilesIn ../MCF710Gy96h_noribo.1.fq ../MCF710Gy96h_noribo.2.fq --outSAMtype BAM SortedByCoordinate --sjdbGTFfile ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf --outFileNamePrefix STAR_MCF710Gy96h --runThreadN 4 --bamRemoveDuplicatesType UniqueIdentical
+#STAR --genomeDir ~/RNAseq_analyzer/data/hg38_noalt/STAR_index/ --readFilesIn ../MCF710Gy96h_noribo.1.fq ../MCF710Gy96h_noribo.2.fq --outSAMtype BAM SortedByCoordinate --sjdbGTFfile ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf --outFileNamePrefix STAR_MCF710Gy96h --runThreadN 4 --bamRemoveDuplicatesType UniqueIdentical
+STAR --genomeDir ~/RNAseq_analyzer/data/hg38_noalt/STAR_index/ --readFilesIn ../MCF710Gy96h_noribo.1.fq ../MCF710Gy96h_noribo.2.fq --outSAMtype BAM SortedByCoordinate --sjdbGTFfile ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf --outFileNamePrefix STAR_MCF710Gy96h --runThreadN 4 --bamRemoveDuplicatesType UniqueIdentical --quantMode TranscriptomeSAM
 
 more STAR_MCF710Gy96hLog.final.out
 
-samtools view -bh -q 255 ./STAR_MCF710Gy96h/STAR_MCF710Gy96hAligned.sortedByCoord.out.bam > STAR_MCF710Gy96h.uniq.rmdup.bam
-samtools index STAR_MCF710Gy96h.uniq.rmdup.bam
+#samtools view -bh -q 255 ./STAR_MCF710Gy96h/STAR_MCF710Gy96hAligned.sortedByCoord.out.bam > STAR_MCF710Gy96h.uniq.rmdup.bam
+#samtools index STAR_MCF710Gy96h.uniq.rmdup.bam
 
 
-featureCounts -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MCF7_illumina_counts.txt STAR_MCF710Gy96h.uniq.rmdup.bam
-featureCounts -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MDAMB468_NT_illumina_counts.t
-xt STAR_MDAMB468_NT.uniq.rmdup.bam
+#featureCounts -p -t exon -g gene_id -a ~/RNAseq_analyzer/data/Homo_sapiens/UCSC/hg38/Annotation/Genes/genes.gtf -o MCF7_illumina_counts.txt STAR_MCF710Gy96h.uniq.rmdup.bam
+rsem-calculate-expression -p 16 --paired-end --alignments --append-names --estimate-rspd --no-bam-output ./STAR_MCF7_10Gy96h/STAR_MCF710Gy96hAligned.toTranscriptome.out.bam ~/RNAseq_analyzer/data/RSEM_Reference MCF710Gy96h
