@@ -22,8 +22,8 @@ mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
 ### reference配列とgtfファイルをインストールと準備
-インストールもとは、Ensembl https://asia.ensembl.org/Homo_sapiens/Info/Index
-ほかでも良いです。
+インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
+
 
 
 ### STARの準備
@@ -32,9 +32,9 @@ mamba install -c bioconda samtools -y
 ### RSEMの準備
 
 
-## 手順
-パッケージのインストーラーのmambaを使用して、必要なツールのダウンロード
 
 
 # 参考資料
-東大式 生命データサイエンス即戦力講座〜ゲノム、エピゲノム、トランスクリプトームからシングルセルまで、大規模データ解析で論文を書くためのR&Pythonツールボックス
+- 東大式 生命データサイエンス即戦力講座〜ゲノム、エピゲノム、トランスクリプトームからシングルセルまで、大規模データ解析で論文を書くためのR&Pythonツールボックス
+- windowsでRNA-seq解析 [https://zenn.dev/rchiji/books/cd3bc4612d79b4]
+
