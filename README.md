@@ -13,6 +13,22 @@ WSL2上のUbuntu20.04を想定
 
 ## 実行環境の構築
 pythonのパッケージインストーラーのmambaを利用する
+### インストール色々
+```
+mamba install -c bioconda fastqc -y
+mamba install -c bioconda multiqc -y
+mamba install -c bioconda star -y
+mamba install -c bioconda rsem -y
+mamba install -c bioconda samtools -y
+```
+### reference配列とgtfファイルをインストールする
+インストールもとは、Ensembl(https://asia.ensembl.org/Homo_sapiens/Info/Index)にする
+ほかでも良いです。
+
+
+### STARの準備
+
+
 
 
 ## 手順
