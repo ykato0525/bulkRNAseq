@@ -21,7 +21,7 @@ mamba install -c bioconda star -y
 mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
-### reference配列とgtfファイルをインストールする
+### reference配列とgtfファイルをインストールと準備
 インストールもとは、Ensembl https://asia.ensembl.org/Homo_sapiens/Info/Index
 ほかでも良いです。
 
@@ -29,6 +29,7 @@ mamba install -c bioconda samtools -y
 ### STARの準備
 
 
+### RSEMの準備
 
 
 ## 手順
