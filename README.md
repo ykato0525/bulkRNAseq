@@ -22,7 +22,7 @@ mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
 ### reference配列とgtfファイルをインストールする
-インストールもとは、Ensembl(https://asia.ensembl.org/Homo_sapiens/Info/Index)にする
+インストールもとは、Ensembl https://asia.ensembl.org/Homo_sapiens/Info/Index
 ほかでも良いです。
 
 
