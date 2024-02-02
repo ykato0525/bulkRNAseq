@@ -22,14 +22,39 @@ mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
 ### reference配列とgtfファイルをインストールと準備
-インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
+- インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
+- バージョンが変わるので、定期的に見直すと良いかも(執筆時2024年2月2日)
+```
+mkdir 
+wget https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+wget https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
+
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.111.gtf.gz
+```
+
+### STARのindexの作成
+- 解析のルートディレクトリで実行
+```
+STAR --runMode genomeGenerate \
+--genomeDir ~/Reference/STAR_index \
+--runThreadN 16 \
+--genomeFastaFiles ~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+--sjdbGTFfile ~/Reference/Homo_sapiens.GRCh38.111.gtf
+```
+
+### RSEMのindexの作成
+- 解析のルートディレクトリで実行
+```
+rsem-prepare-reference \
+--num-threads 16 \
+--gtf ~/Reference/Homo_sapiens.GRCh38.111.gtf \
+~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+~/Reference/RSEM_Reference
+```
 
 
 
-### STARの準備
-
-
-### RSEMの準備
 
 
 
