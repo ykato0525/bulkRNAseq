@@ -11,16 +11,17 @@ WSL2上のUbuntu20.04を想定
 - RSEM
 - biomart
 
-## 実行環境の構築
-pythonのパッケージインストーラーのmambaを利用する
+## 1. 実行環境の構築
+- pythonのパッケージインストーラーのmambaを利用する
+- 環境構築に関しては、各OSで異なる場合があるので一つずつ行うのが良い。
 
-### ディレクトリを作成する
+### step 1: ディレクトリを作成する
 ```
 mkdir RNAseq
 mkdir Reference
 ```
 
-### インストール色々
+### step 2: インストール色々
 mambaが入っている前提で行う
 ```
 mamba install -c bioconda fastqc -y
@@ -30,7 +31,7 @@ mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
 
-### reference配列とgtfファイルをインストールと準備
+### step3: reference配列とgtfファイルをインストールと準備
 - インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
 - バージョンが変わるので、定期的に見直すと良いかも(執筆時2024年2月2日)
 ```
@@ -42,7 +43,7 @@ gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gunzip Homo_sapiens.GRCh38.111.gtf.gz
 ```
 
-### STARのindexの作成
+### step:4 STARのindexの作成
 - 解析のルートディレクトリで実行
 ```
 STAR --runMode genomeGenerate \
@@ -52,7 +53,7 @@ STAR --runMode genomeGenerate \
 --sjdbGTFfile ~/ref/Homo_sapiens.GRCh38.111.gtf
 ```
 
-### RSEMのindexの作成
+### step5: RSEMのindexの作成
 - 解析のルートディレクトリで実行
 ```
 rsem-prepare-reference \
@@ -62,7 +63,7 @@ rsem-prepare-reference \
 ~/Reference/RSEM_Reference
 ```
 
-### 解析の実行
+## 2. 解析の実行
 RNAseqフォルダに解析対象のfastqファイルを入れて以下をコマンドラインから実行する
 ```
 cd RNAseq # 適宜変更
