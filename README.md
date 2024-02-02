@@ -1,4 +1,4 @@
-# bulk RNA-seqのカウント値の算出を自動化する
+# RNA-seqの解析の流れ
 
 ## 実行環境
 WSL2上のUbuntu20.04を想定
