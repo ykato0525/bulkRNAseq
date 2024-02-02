@@ -48,8 +48,8 @@ gunzip Homo_sapiens.GRCh38.111.gtf.gz
 STAR --runMode genomeGenerate \
 --genomeDir ~/Reference/STAR_index \
 --runThreadN 16 \
---genomeFastaFiles ~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
---sjdbGTFfile ~/Reference/Homo_sapiens.GRCh38.111.gtf
+--genomeFastaFiles ~/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+--sjdbGTFfile ~/ref/Homo_sapiens.GRCh38.111.gtf
 ```
 
 ### RSEMのindexの作成
@@ -69,7 +69,41 @@ cd RNAseq # 適宜変更
 bash pipeline.sh
 ```
 
+## 備忘録
 
+### 個別のファイルの実行方法について
+pipeline.shには、全てのファイルを一括で送信するためのコードを記載してあるが、ライブラリの個々のパラメータについて備忘録として記載する。
+
+#### fastqc
+```
+fastqc -t 12 --nogroup <<fastqファイル>> ; fastqc -t 12 --nogroup <<fastqファイル>>
+```
+- 引数について
+  -　-t : スレッド数
+  -  --no-group: 数塩基単位でまとめて解析するのを防ぐ(基本的にいれた方が良い)
+  -  -o: 保存されるディレクトリを指定する   
+
+### STAR
+```
+STAR \
+--genomeDir ~/Reference/STAR_index \
+--runThreadN 16 \
+--outFileNamePrefix SRR22571458_ \
+--quantMode TranscriptomeSAM \
+--outSAMtype None \
+--readFilesCommand zcat \ # macの場合はgzcat
+--readFilesIn fastq_1 fastq_2
+```
+
+
+### RSEM
+```
+rsem-prepare-reference \
+--num-threads 16 \
+--gtf ~/Reference/Homo_sapiens.GRCh38.111.gtf \
+~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+~/Reference/RSEM_Reference
+```
 
 
 
