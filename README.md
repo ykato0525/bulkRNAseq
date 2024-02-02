@@ -98,11 +98,16 @@ STAR \
 
 ### RSEM
 ```
-rsem-prepare-reference \
---num-threads 16 \
---gtf ~/Reference/Homo_sapiens.GRCh38.111.gtf \
-~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
-~/Reference/RSEM_Reference
+rsem-calculate-expression \
+-p 16 \
+--paired-end \
+--alignments \
+--append-names \
+--estimate-rspd \
+--no-bam-output \
+your"bam"file \
+~/Reference/RSEM_Reference \
+f_out
 ```
 
 
