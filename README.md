@@ -1,5 +1,12 @@
-# RNA-seqの解析の流れ
+# RNA-seqの解析
 
+1. fastqからcount, TPMを算出する
+2. その後の解析
+  a. pydeseq2
+  b. pygsea
+  c. ComplexHeatmapによる可視化
+
+# 1. fastqからcount, TPMを算出する
 ## 実行環境
 WSL2上のUbuntu20.04を想定
 
@@ -11,7 +18,7 @@ WSL2上のUbuntu20.04を想定
 - RSEM
 - biomart
 
-## 1. 実行環境の構築
+## a. 実行環境の構築
 - pythonのパッケージインストーラーのmambaを利用する
 - 環境構築に関しては、各OSで異なる場合があるので一つずつ行うのが良い。
 
@@ -63,14 +70,15 @@ rsem-prepare-reference \
 ~/Reference/RSEM_Reference
 ```
 
-## 2. 解析の実行
+## b. 解析の実行
 RNAseqフォルダに解析対象のfastqファイルを入れて以下をコマンドラインから実行する
 ```
 cd RNAseq # 適宜変更
 bash pipeline.sh
 ```
+まだ記載していません
 
-## 備忘録
+## c. 備忘録
 
 ### 個別のファイルの実行方法について
 pipeline.shには、全てのファイルを一括で送信するためのコードを記載してあるが、ライブラリの個々のパラメータについて備忘録として記載する。
@@ -110,6 +118,8 @@ your"bam"file \
 ~/Reference/RSEM_Reference \
 f_out
 ```
+
+# 2. その後の解析
 
 
 
