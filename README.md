@@ -18,7 +18,7 @@ WSL2上のUbuntu20.04を想定
 ### step 1: ディレクトリを作成する
 ```
 mkdir RNAseq
-mkdir Reference
+mkdir RNAseq/Reference
 ```
 
 ### step 2: インストール色々
