@@ -12,11 +12,9 @@ Mac mini (apple silicon M2)を想定
 
 ## 実行するライブラリ
 - FastQC
-- multiQC
 - fastp
 - STAR
 - RSEM
-- biomart
 
 ## a. 実行環境の構築
 - pythonのパッケージインストーラーのmambaを利用する
