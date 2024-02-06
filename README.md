@@ -75,6 +75,7 @@ rsem-prepare-reference \
 
 ## b. 解析の実行
 RNAseqフォルダに解析対象のfastqファイルを入れて以下をコマンドラインから実行する
+(bash または、zshをまなんで自作してみてください)
 ```
 cd RNAseq # 適宜変更
 bash pipeline.sh
