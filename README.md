@@ -8,7 +8,7 @@
 
 # 1. fastqからcount, TPMを算出する
 ## 実行環境
-WSL2上のUbuntu20.04を想定
+Mac mini (apple silicon M2)を想定
 
 ## 実行するライブラリ
 - FastQC
@@ -79,7 +79,7 @@ RNAseqフォルダに解析対象のfastqファイルを入れて以下をコマ
 cd RNAseq # 適宜変更
 bash pipeline.sh
 ```
-まだ記載していません
+
 
 ## c. 備忘録
 
