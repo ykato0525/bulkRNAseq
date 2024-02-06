@@ -126,7 +126,7 @@ f_out
 テキストファイルについては、同フォルダにあるcounts_df.txtとmetadata.txtを参照してください。
 
 ```
-python3 pydeg2.py << conts_df_path >> << metadata_path >> <<design_factor>>
+python3 pydeseq2.py << conts_df_path >> << metadata_path >> <<design_factor>>
 # <<>>の中は、個人の環境に合わせて変更する
 ```
 
