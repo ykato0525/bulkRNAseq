@@ -45,7 +45,7 @@ mambaが2.7.11b以上のバージョンをインストール可能になれば�
 - インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
 - バージョンが変わるので、定期的に見直すと良いかも(執筆時2024年2月2日)
 ```
-cd Refence
+cd Reference
 wget https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 wget https://ftp.ensembl.org/pub/release-111/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz
 
@@ -57,10 +57,10 @@ gunzip Homo_sapiens.GRCh38.111.gtf.gz
 - 解析のルートディレクトリで実行
 ```
 STAR --runMode genomeGenerate \
---genomeDir ~/Reference/STAR_index \
+--genomeDir ~/RNAseq/Reference/STAR_index \
 --runThreadN 16 \
---genomeFastaFiles ~/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
---sjdbGTFfile ~/ref/Homo_sapiens.GRCh38.111.gtf
+--genomeFastaFiles ~/RNAseq/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+--sjdbGTFfile ~/RNAseq/Reference/Homo_sapiens.GRCh38.111.gtf
 ```
 
 ### step5: RSEMのindexの作成
@@ -68,9 +68,9 @@ STAR --runMode genomeGenerate \
 ```
 rsem-prepare-reference \
 --num-threads 16 \
---gtf ~/Reference/Homo_sapiens.GRCh38.111.gtf \
-~/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
-~/Reference/RSEM_Reference
+--gtf ~/RNAseq/Reference/Homo_sapiens.GRCh38.111.gtf \
+~/RNAseq/Reference/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+~/RNAseq/Reference/RSEM_Reference
 ```
 
 ## b. 解析の実行
@@ -104,7 +104,7 @@ STAR \
 --quantMode TranscriptomeSAM \
 --outSAMtype None \
 --readFilesCommand zcat \ # macの場合はgzcat
---readFilesIn fastq_1 fastq_2
+--readFilesIn <<your_fastq_1>> <<your_fastq_2>>
 ```
 
 
@@ -117,8 +117,8 @@ rsem-calculate-expression \
 --append-names \
 --estimate-rspd \
 --no-bam-output \
-your"bam"file \
-~/Reference/RSEM_Reference \
+<<your-bam-file>> \
+~/RNAseq/Reference/RSEM_Reference \
 f_out
 ```
 
