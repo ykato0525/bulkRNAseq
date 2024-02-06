@@ -7,8 +7,6 @@
   c. ComplexHeatmapによる可視化
 
 # 1. fastqからcount, TPMを算出する
-## 実行環境
-Mac mini (apple silicon M2)を想定
 
 ## 実行するライブラリ
 - FastQC
