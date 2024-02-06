@@ -122,19 +122,33 @@ f_out
 # 2. その後の解析
 ## 発現が変動している遺伝子を統計的な解析により明らかにしたい場合
 ### DESeq2を利用する場合
+引数には、テキストファイルのpathを入力する。
+テキストファイルについては、同フォルダにあるcounts_df.txtとmetadata.txtを参照してください。
+
 ```
-python3 pydeg2.py # ファイルを追加中です
+python3 pydeg2.py << conts_df_path >> << metadata_path >> <<design_factor>>
+# <<>>の中は、個人の環境に合わせて変更する
 ```
+
 ### サンプル数が少ない場合、fold-changeで発現変動遺伝子を抽出したい場合
 ```
 python3 extract_deg.py　# ファイルを追加中です
 ```
 
 ## enrichment解析を行いたい場合
+使い方の詳細については、別のサイト [https://kato-inform.com] にまとめています
+### Enrichrを利用する
+webサイトにアクセス後、興味ある遺伝子群を入力して、解析を行うだけ。網羅的に調べることができるので、有効だと思う。
+
 ### GSEApyを実行する
 普通のGO, GSEA, ssGSEA, GSVAなどできるので便利です。
 使用例は本家のサイトを参照ください。
 - GSEAPY [https://gseapy.readthedocs.io/en/latest/introduction.html]
+
+## 遺伝子発現パターンを可視化する
+ComplexHeatmap [https://jokergoo.github.io/ComplexHeatmap-reference/book/] がおすすめ
+グラフの小技集 [https://github.com/ykato0525/graph_matome] を作ってますので、そちらにあります。
+
 
 
 そのほかのデータベースを利用した情報は、私のwebサイトに記載しましたのでご参照下さい。
