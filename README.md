@@ -138,7 +138,7 @@ python3 extract_deg.py　# ファイルを追加中です
 ## enrichment解析を行いたい場合
 使い方の詳細については、別のサイト [https://kato-inform.com] にまとめています
 ### Enrichrを利用する
-webサイトにアクセス後、興味ある遺伝子群を入力して、解析を行うだけ。網羅的に調べることができるので、有効だと思う。
+webサイト [https://maayanlab.cloud/Enrichr/] にアクセス後、興味ある遺伝子群を入力して、解析を行うだけ。網羅的に調べることができるので、有効だと思う。
 
 ### GSEApyを実行する
 普通のGO, GSEA, ssGSEA, GSVAなどできるので便利です。
