@@ -122,10 +122,26 @@ f_out
 ```
 
 # 2. その後の解析
+## 発現が変動している遺伝子を統計的な解析により明らかにしたい場合
+### DESeq2を利用する場合
+```
+python3 pydeg2.py # ファイルを追加中です
+```
+### サンプル数が少ない場合、fold-changeで発現変動遺伝子を抽出したい場合
+```
+python3 extract_deg.py　# ファイルを追加中です
+```
+
+## enrichment解析を行いたい場合
+### GSEApyを実行する
+普通のGO, GSEA, ssGSEA, GSVAなどできるので便利です。
+使用例は以下の通りです。
 
 
+そのほかのデータベースを利用した情報は、私のwebサイトに記載しましたのでご参照下さい。
 
 # 参考資料
-- 東大式 生命データサイエンス即戦力講座〜ゲノム、エピゲノム、トランスクリプトームからシングルセルまで、大規模データ解析で論文を書くためのR&Pythonツールボックス
+- 東大式 生命データサイエンス即戦力講座〜ゲノム、エピゲノム、トランスクリプトームからシングルセルまで、大規模データ解析で論文を書くためのR&Pythonツールボックス (羊土社）
 - windowsでRNA-seq解析 [https://zenn.dev/rchiji/books/cd3bc4612d79b4]
-
+- PyDESeq2 [https://pydeseq2.readthedocs.io/en/latest/]
+- GSEAPY [https://gseapy.readthedocs.io/en/latest/introduction.html]
