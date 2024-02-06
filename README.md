@@ -38,6 +38,9 @@ mamba install -c bioconda rsem -y
 mamba install -c bioconda samtools -y
 ```
 
+Mac miniで行う場合STAR(2.7.11a)はエラーが出てしまうので、STAR(ver2.7.5a)を使用するとエラー回避できる。
+mambaが2.7.11b以上のバージョンをインストール可能になれば、そちらのバージョンを使用した方が良いかもしれない。
+
 ### step3: reference配列とgtfファイルをインストールと準備
 - インストールもとは、Ensembl [https://asia.ensembl.org/Homo_sapiens/Info/Index] 
 - バージョンが変わるので、定期的に見直すと良いかも(執筆時2024年2月2日)
