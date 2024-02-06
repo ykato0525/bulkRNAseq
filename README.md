@@ -133,7 +133,8 @@ python3 extract_deg.py　# ファイルを追加中です
 ## enrichment解析を行いたい場合
 ### GSEApyを実行する
 普通のGO, GSEA, ssGSEA, GSVAなどできるので便利です。
-使用例は以下の通りです。
+使用例は本家のサイトを参照ください。
+- GSEAPY [https://gseapy.readthedocs.io/en/latest/introduction.html]
 
 
 そのほかのデータベースを利用した情報は、私のwebサイトに記載しましたのでご参照下さい。
