@@ -147,11 +147,7 @@ webサイト [https://maayanlab.cloud/Enrichr/] にアクセス後、興味あ�
 
 ## 遺伝子発現パターンを可視化する
 ComplexHeatmap [https://jokergoo.github.io/ComplexHeatmap-reference/book/] がおすすめ
-グラフの小技集 [https://github.com/ykato0525/graph_matome] を作ってますので、そちらにあります。
 
-
-
-そのほかのデータベースを利用した情報は、私のwebサイトに記載しましたのでご参照下さい。
 
 # 参考資料
 - 東大式 生命データサイエンス即戦力講座〜ゲノム、エピゲノム、トランスクリプトームからシングルセルまで、大規模データ解析で論文を書くためのR&Pythonツールボックス (羊土社）
